@@ -6,7 +6,7 @@ function Todo(props){
     const toggleCompleted =() =>{
         props.dispach({
             type: 'TOGGLE_COMPLETE',
-            payload: props.task.id
+            payload: {id: props.task.id}
         }) 
     }
     return(

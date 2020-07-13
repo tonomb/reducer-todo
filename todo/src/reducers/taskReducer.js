@@ -17,12 +17,20 @@ export const reducer = (state, action) => {
               ...state,
               action.payload
           ]
-      // case 'TOGGLE_COMPLETE':
-      //   console.log('toggle from reducer')
-      //   return
+      case 'TOGGLE_COMPLETE':
+        const completed = state.map(item =>{
+          if(item.id === action.payload.id){
+            return {
+              ...item,
+              completed: !item.completed
+            }
+          } else {
+            return item
+          }
+        })
+      return completed
       case 'CLEAR_COMPLETED':
-      const notCompleted = state.filter(task => task.completed === false)
-      console.log(notCompleted);
+        const notCompleted = state.filter(task => task.completed === false)
       return notCompleted
     default:
       return state;
