@@ -26,6 +26,12 @@ function Navbar(props){
         setFormValues(initialFormValues)
     }
 
+    const clearCompleted = () => {
+        props.dispach({
+            type: 'CLEAR_COMPLETED'
+        })
+    }
+
 
     return(
         <div className='navbar'>
@@ -37,7 +43,7 @@ function Navbar(props){
                 ></input>
                 <button >Add Todo</button>
             </form>
-            <button>Clear Completed</button>
+            <button onClick={clearCompleted}>Clear Completed</button>
         </div>
     )
 }

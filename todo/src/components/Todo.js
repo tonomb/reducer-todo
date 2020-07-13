@@ -1,16 +1,18 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 function Todo(props){
-    const [completed, setCompleted] = useState(false)
+    
 
     const toggleCompleted =() =>{
-        
+        props.dispach({
+            type: 'TOGGLE_COMPLETE',
+            payload: props.task.id
+        }) 
     }
-
     return(
         <div className='todo'
             onClick={toggleCompleted}>
-            <h3 className={completed ? 'completed' : ''}>{props.task.title}</h3>
+            <h3 className={props.task.completed ? 'completed' : ''}>{props.task.title}</h3>
         </div>
     )
 }

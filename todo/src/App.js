@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <Navbar dispach={dispach} />
-      <TodoList tasks={tasks} />
+      <TodoList tasks={tasks} dispach={dispach} />
     </div>
   );
 }
