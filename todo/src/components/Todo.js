@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 function Todo(props){
     
@@ -13,6 +14,7 @@ function Todo(props){
         <div className='todo'
             onClick={toggleCompleted}>
             <h3 className={props.task.completed ? 'completed' : ''}>{props.task.title}</h3>
+            { props.task.completed ? <p>{moment().format('ddd, h:mA')}</p> : ''}
         </div>
     )
 }
