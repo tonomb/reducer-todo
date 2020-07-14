@@ -1,9 +1,10 @@
-import React, {useState, useReducer} from 'react'
+import React, {useState} from 'react'
+import { v4 as uuidv4 } from 'uuid';
 
 const initialFormValues = {
     title: '',
     completed: false,
-    id: new Date()
+    id: uuidv4()
 }
 
 function Navbar(props){
@@ -13,7 +14,8 @@ function Navbar(props){
     const changeHandler = (e) => {
         setFormValues({
             ...initialFormValues,
-            title: e.target.value
+            title: e.target.value,
+            id:uuidv4()
         });
     }
 
@@ -43,7 +45,7 @@ function Navbar(props){
                 ></input>
                 <button >Add Todo</button>
             </form>
-            <button onClick={clearCompleted}>Clear Completed</button>
+            <button onClick={clearCompleted} className='clear-btn'>Clear Completed</button>
         </div>
     )
 }
