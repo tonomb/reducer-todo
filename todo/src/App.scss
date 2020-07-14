@@ -1,0 +1,97 @@
+
+body{
+  background-color: whitesmoke;
+}
+
+#root{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.App{
+  margin-top: 100px;
+  text-align: center;
+  background-color: white;
+  height: 700px;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  box-shadow: 5px 5px 5px rgba(0,0,0,.3);
+  position: relative;
+}
+
+.navbar{
+  display: flex;
+  justify-content: center;
+  margin: 80px 0 20px;
+
+  form{
+    input{
+      width: 500px;
+      font-size: 16px;
+      padding: 6px;
+      outline: none;
+      &:focus{
+        border: 1px solid black;
+      }
+    }
+    button{
+      background-color: #24ffbd;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+
+  button{
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .clear-btn{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background-color: #DB0042;
+
+    &:hover{
+      background-color: white;
+      border: 2px solid #DB0042;
+      color: #DB0042;
+      cursor: pointer;
+    }
+  }
+}
+
+
+.todo-list{
+  width: 600px;
+  margin: 0 auto;
+}
+
+.todo{
+  border-bottom: 1px solid darkslategray;
+  height: 30px;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+
+  h3{
+    margin-left: 16px;
+  }
+
+  .completed{
+    text-decoration: line-through;
+  }
+  p{
+    margin-right: 30px;
+    opacity: .5;
+  }
+
+}
